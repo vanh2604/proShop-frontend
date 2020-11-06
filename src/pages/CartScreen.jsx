@@ -4,7 +4,7 @@ import { Link, useParams } from 'react-router-dom';
 import { Image, ListGroup, Row, Col, Form, Button, Card, Alert } from 'react-bootstrap';
 import { addToCart, removeCartItem } from '../redux/actions/Cart.action';
 
-const CartScreen = ({ location }) => {
+const CartScreen = ({ location, history }) => {
   const { id } = useParams();
   const qty = location.search ? Number(location.search.split('=')[1]) : 1;
   const cartItems = useSelector((state) => state.cartReducer.cartItems);
@@ -18,6 +18,10 @@ const CartScreen = ({ location }) => {
 
   const handleDeleteItem = (id) => {
     dispatch(removeCartItem(id));
+  };
+
+  const handleCheckout = () => {
+    history.push('/signin?redirect=shipping');
   };
 
   return (
@@ -83,6 +87,7 @@ const CartScreen = ({ location }) => {
             <ListGroup.Item>
               <Button
                 type="button"
+                onClick={handleCheckout}
                 className="btn-block"
                 disabled={cartItems.length === 0}
               >

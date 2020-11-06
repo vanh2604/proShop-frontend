@@ -1,9 +1,8 @@
 import {
-  START_LOGIN,
-  LOGIN_SUCCESS,
-  LOGIN_FAILURE,
-  USER_LOGOUT,
-} from '../constants/userLoginConstant';
+  START_REGISTER,
+  REGISTER_SUCCESS,
+  REGISTER_FAILURE,
+} from '../constants/userRegister';
 
 const initialState = {
   loading: false,
@@ -15,14 +14,12 @@ const initialState = {
 
 export default (state = initialState, action) => {
   switch (action.type) {
-    case START_LOGIN:
+    case START_REGISTER:
       return { ...state, loading: true };
-    case LOGIN_SUCCESS:
-      return { ...state, loading: false, userInfo: action.data, error: '' };
-    case LOGIN_FAILURE:
+    case REGISTER_SUCCESS:
+      return { ...state, loading: false, userInfo: action.data };
+    case REGISTER_FAILURE:
       return { ...state, loading: false, error: action.error };
-    case USER_LOGOUT:
-      return { ...state, userInfo: null };
     default:
       return state;
   }

@@ -9,6 +9,10 @@ import Switch from 'react-bootstrap/esm/Switch';
 import ProductScreen from './pages/ProductScreen';
 import CartScreen from './pages/CartScreen';
 import LoginScreen from './pages/LoginScreen';
+import RegisterScreen from './pages/RegisterScreen';
+import UserProfileScreen from './pages/UserProfileScreen';
+import ShippingScreen from './pages/ShippingScreen';
+import PaymentScreen from './pages/PaymentScreen';
 
 function App() {
   return (
@@ -21,6 +25,10 @@ function App() {
             <Route path="/product/:id" component={ProductScreen} exact />
             <Route exact path="/cart/:id?" component={CartScreen} />
             <Route path="/signin" component={LoginScreen} />
+            <Route path="/register" component={RegisterScreen} />
+            <Route path="/profile" component={UserProfileScreen} />
+            <Route path="/shipping" component={ShippingScreen} />
+            <Route path="/payment" component={PaymentScreen} />
           </Switch>
         </Container>
       </main>
