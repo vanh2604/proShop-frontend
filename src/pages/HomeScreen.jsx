@@ -6,14 +6,16 @@ import Product from '../components/Product';
 import ProductCarosel from '../components/ProductCarosel';
 import { getProductList } from '../redux/actions/fetchProductApi.action';
 
-const HomeScreen = () => {
+const HomeScreen = ({ match }) => {
   const products = useSelector((state) => state.productReducer.productLists);
   const isLoading = useSelector((state) => state.productReducer.isLoading);
   const dispatch = useDispatch();
 
+  const keyword = match.params.keyword;
+
   useEffect(() => {
-    dispatch(getProductList());
-  }, [dispatch]);
+    dispatch(getProductList(keyword));
+  }, [dispatch, keyword]);
 
   const renderProducts = () => {
     return products.map((product, index) => (

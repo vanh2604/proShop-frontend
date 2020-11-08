@@ -5,11 +5,11 @@ import {
   START_FETCHING_PRODUCT,
 } from '../constants/fetchProductConstant';
 
-export const getProductList = () => {
+export const getProductList = (keyword = '') => {
   return async (dispatch) => {
     try {
       dispatch({ type: START_FETCHING_PRODUCT });
-      const { data } = await Axios.get('/api/products');
+      const { data } = await Axios.get(`/api/products?keyword=${keyword}`);
       dispatch({ type: GET_PRODUCT_LIST, data: data });
     } catch (error) {
       console.log(error);
