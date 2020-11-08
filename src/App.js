@@ -13,6 +13,9 @@ import RegisterScreen from './pages/RegisterScreen';
 import UserProfileScreen from './pages/UserProfileScreen';
 import ShippingScreen from './pages/ShippingScreen';
 import PaymentScreen from './pages/PaymentScreen';
+import PlaceOrderScreen from './pages/PlaceOrderScreen';
+import OrderDetail from './pages/OrderDetail';
+import NotFoundPage from './pages/NotFoundPage';
 
 function App() {
   return (
@@ -29,6 +32,9 @@ function App() {
             <Route path="/profile" component={UserProfileScreen} />
             <Route path="/shipping" component={ShippingScreen} />
             <Route path="/payment" component={PaymentScreen} />
+            <Route path="/placeorder" component={PlaceOrderScreen} />
+            <Route path="/orders/:id" component={OrderDetail} />
+            <Route component={NotFoundPage} />
           </Switch>
         </Container>
       </main>

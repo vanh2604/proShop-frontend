@@ -12,7 +12,7 @@ const initialState = {
   shippingAddress: localStorage.getItem('shippingAddress')
     ? JSON.parse(localStorage.getItem('shippingAddress'))
     : {},
-  paymentMethod: '',
+  paymentMethod: 'PayPal',
 };
 
 export default (state = initialState, action) => {

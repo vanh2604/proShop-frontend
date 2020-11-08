@@ -3,6 +3,7 @@ import { Col, Row } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import Loader from '../components/Loader';
 import Product from '../components/Product';
+import ProductCarosel from '../components/ProductCarosel';
 import { getProductList } from '../redux/actions/fetchProductApi.action';
 
 const HomeScreen = () => {
@@ -27,6 +28,7 @@ const HomeScreen = () => {
   } else
     return (
       <>
+        <ProductCarosel />
         <h2>THE LATEST PRODUCTS</h2>
         <Row>{renderProducts()}</Row>
       </>
