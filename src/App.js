@@ -16,8 +16,7 @@ import PlaceOrderScreen from './pages/PlaceOrderScreen';
 import OrderDetail from './pages/OrderDetail';
 import NotFoundPage from './pages/NotFoundPage';
 import Axios from 'axios';
-Axios.defaults.baseURL =
-  'https://cors-anywhere.herokuapp.com/https://proshopabc.herokuapp.com';
+Axios.defaults.baseURL = 'https://backend-proshop.herokuapp.com';
 
 function App() {
   return (
